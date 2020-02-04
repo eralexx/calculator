@@ -1,5 +1,12 @@
 .resultScreen {
   padding: 2px;
+  height: 40px;
   margin: 2px 10px 0px 10px;
   border: 2px solid black;
+}
+
+.resultScreen > span {
+  font-family: Segment7Standard;
+  vertical-align: -webkit-baseline-middle;
+  font-size: 38px;
 }
