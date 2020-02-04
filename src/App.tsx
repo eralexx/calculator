@@ -15,31 +15,158 @@ const App = () => {
           <Header />
           <ResultsBar />
           <ButtonsGrid>
-            <Button id={1} literal={"MRC"} />
-            <Button id={2} literal={"M-"} />
-            <Button id={3} literal={"M+"} />
-            <Button id={5} literal={"+/-"} />
-            <Button id={6} literal={"ON"} />
-            <Button id={7} literal={"7"} />
-            <Button id={8} literal={"8"} />
-            <Button id={9} literal={"9"} />
-            <Button id={10} literal={"%"} />
-            <Button id={11} literal={"→"} />
-            <Button id={12} literal={"4"} />
-            <Button id={13} literal={"5"} />
-            <Button id={14} literal={"6"} />
-            <Button id={15} literal={"x"} />
-            <Button id={16} literal={"÷"} />
-            <Button id={17} literal={"1"} />
-            <Button id={18} literal={"2"} />
-            <Button id={19} literal={"3"} />
-            <Button id={20} doubleUp literal={"+"} />
-            <Button id={21} literal={"-"} />
-            <Button id={22} literal={"0"} />
-            <Button id={23} literal={"00"} />
-            <Button id={24} literal={"."} />
-            <Button id={20} doubleDown literal={""} />
-            <Button id={25} literal={"="} />
+            <Button
+              id={1}
+              backgroundColor={"black"}
+              foregroundColor={"white"}
+              literal={"MRC"}
+            />
+            <Button
+              id={2}
+              backgroundColor={"black"}
+              foregroundColor={"white"}
+              literal={"M-"}
+            />
+            <Button
+              id={3}
+              backgroundColor={"black"}
+              foregroundColor={"white"}
+              literal={"M+"}
+            />
+            <Button
+              id={5}
+              backgroundColor={"black"}
+              foregroundColor={"white"}
+              literal={"+/-"}
+            />
+            <Button
+              id={6}
+              backgroundColor={"orange"}
+              foregroundColor={"white"}
+              literal={"ON"}
+            />
+            <Button
+              id={7}
+              backgroundColor={"grey"}
+              foregroundColor={"white"}
+              literal={"7"}
+            />
+            <Button
+              id={8}
+              backgroundColor={"grey"}
+              foregroundColor={"white"}
+              literal={"8"}
+            />
+            <Button
+              id={9}
+              backgroundColor={"grey"}
+              foregroundColor={"white"}
+              literal={"9"}
+            />
+            <Button
+              id={10}
+              backgroundColor={"black"}
+              foregroundColor={"white"}
+              literal={"%"}
+            />
+            <Button
+              id={11}
+              backgroundColor={"black"}
+              foregroundColor={"white"}
+              literal={"→"}
+            />
+            <Button
+              id={12}
+              backgroundColor={"grey"}
+              foregroundColor={"white"}
+              literal={"4"}
+            />
+            <Button
+              id={13}
+              backgroundColor={"grey"}
+              foregroundColor={"white"}
+              literal={"5"}
+            />
+            <Button
+              id={14}
+              backgroundColor={"grey"}
+              foregroundColor={"white"}
+              literal={"6"}
+            />
+            <Button
+              id={15}
+              backgroundColor={"black"}
+              foregroundColor={"white"}
+              literal={"x"}
+            />
+            <Button
+              id={16}
+              backgroundColor={"black"}
+              foregroundColor={"white"}
+              literal={"÷"}
+            />
+            <Button
+              id={17}
+              backgroundColor={"grey"}
+              foregroundColor={"white"}
+              literal={"1"}
+            />
+            <Button
+              id={18}
+              backgroundColor={"grey"}
+              foregroundColor={"white"}
+              literal={"2"}
+            />
+            <Button
+              id={19}
+              backgroundColor={"grey"}
+              foregroundColor={"white"}
+              literal={"3"}
+            />
+            <Button
+              id={20}
+              backgroundColor={"black"}
+              foregroundColor={"white"}
+              doubleUp
+              literal={"+"}
+            />
+            <Button
+              id={21}
+              backgroundColor={"black"}
+              foregroundColor={"white"}
+              literal={"-"}
+            />
+            <Button
+              id={22}
+              backgroundColor={"grey"}
+              foregroundColor={"white"}
+              literal={"0"}
+            />
+            <Button
+              id={23}
+              backgroundColor={"grey"}
+              foregroundColor={"white"}
+              literal={"00"}
+            />
+            <Button
+              id={24}
+              backgroundColor={"grey"}
+              foregroundColor={"white"}
+              literal={"."}
+            />
+            <Button
+              id={20}
+              backgroundColor={"black"}
+              foregroundColor={"white"}
+              doubleDown
+              literal={""}
+            />
+            <Button
+              id={25}
+              backgroundColor={"black"}
+              foregroundColor={"white"}
+              literal={"="}
+            />
           </ButtonsGrid>
         </Calculator>
       </ContextProvider>

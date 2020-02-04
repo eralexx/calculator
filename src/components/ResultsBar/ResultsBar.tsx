@@ -1,7 +1,6 @@
-import * as React from "react";
+import React, { useContext } from "react";
 import "./ResultsBar.css";
 import ICalculatorContext from "../../context/ICalculatorContext";
-import { useContext } from "react";
 import Context from "../../context/Context";
 
 const ResultsBar = () => {

@@ -1,26 +1,41 @@
 import React, { Component, useState } from "react";
 import Context from "./Context";
 import ICalculatorContext from "./ICalculatorContext";
+import { sqrt, evaluate } from "mathjs";
 
-const ContextProvider = (props: { children: JSX.Element[] | JSX.Element }) => {
-  const setNewState = (newState: ICalculatorContext) => {
-    setState(newState);
+class ContextProvider extends Component<any, ICalculatorContext> {
+  constructor(props: any) {
+    super(props);
+
+    this.state = {
+      onOff: false,
+      lastResult: 0,
+      operationString: "",
+      screenString: "",
+      setState: this.setNewState,
+      calculate: this.calculateExpression
+    } as ICalculatorContext;
+  }
+
+  private setNewState = (newState: ICalculatorContext) => {
+    this.setState(newState);
   };
 
-  const initialState: ICalculatorContext = {
-    onOff: false,
-    lastResult: 0,
-    operationString: "0000000000",
-    setState: setNewState
+  private calculateExpression = () => {
+    const res = evaluate(this.state.operationString);
+    this.setState({
+      operationString: res,
+      lastResult: res
+    });
   };
 
-  const [state, setState] = useState(initialState);
-
-  return (
-    <Context.Provider value={state as ICalculatorContext}>
-      {props.children}
-    </Context.Provider>
-  );
-};
+  render() {
+    return (
+      <Context.Provider value={this.state as ICalculatorContext}>
+        {this.props.children}
+      </Context.Provider>
+    );
+  }
+}
 
 export default ContextProvider;
