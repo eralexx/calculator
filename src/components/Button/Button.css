@@ -4,8 +4,12 @@
   cursor: pointer;
   text-align: center;
   flex: 1 0 17%; /* explanation below */
-  margin: 2px;
+  margin: 5px;
   height: 60px;
+}
+
+.rounded {
+  border-radius: 80%/75%;
 }
 
 .background-white {
@@ -42,6 +46,7 @@
 }
 
 .button > span {
+  font-size: 30px;
   vertical-align: middle;
 }
 

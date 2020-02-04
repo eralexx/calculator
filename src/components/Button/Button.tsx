@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import "./Button.css";
 import ICalculatorContext from "../../context/ICalculatorContext";
 import Context from "../../context/Context";
-import { ButtonId } from "../../enums/ButtonId";
+import { Operations } from "../../enums/Operations";
 
 const Button = (props: {
   id: number;
@@ -12,11 +12,13 @@ const Button = (props: {
   pressed?: boolean;
   doubleUp?: boolean;
   doubleDown?: boolean;
+  rounded?: boolean;
 }) => {
   const {
     setState: setGlobalState,
     calculate,
-    operationString
+    onOff,
+    displayString
   }: ICalculatorContext = useContext(Context);
 
   const classes = [
@@ -25,39 +27,32 @@ const Button = (props: {
     "foreground-" + props.foregroundColor
   ];
   classes.push(props.pressed ? "pressed" : "unpressed");
+  if (props.rounded) classes.push("rounded");
   if (props.doubleUp) classes.push("double-up");
   if (props.doubleDown) classes.push("double-down");
 
   const handleOnClick = () => {
-    switch (props.id) {
-      case ButtonId.enter:
-        calculate();
-        break;
-      case ButtonId.onOff:
-        setGlobalState({
-          onOff: true,
-          operationString: ""
-        } as ICalculatorContext);
-        break;
-      case ButtonId.rightArrow:
-        break;
-      case ButtonId.sumAlt:
-        let newString = operationString + "+";
-        if (newString.length <= 10) {
+    if (onOff) {
+      switch (props.id) {
+        case Operations.Enter:
+          calculate(Operations.Enter);
+          break;
+        case Operations.RightArrow:
+          calculate(Operations.RightArrow);
+          break;
+        case Operations.Sum:
+          calculate(Operations.Sum);
+          break;
+        default:
           setGlobalState({
-            operationString: newString
+            displayString: displayString + props.literal
           } as ICalculatorContext);
-        }
-        break;
-      default:
-        let newString2 = operationString + props.literal;
-        if (newString2.length <= 10) {
-          setGlobalState({
-            operationString: newString2
-          } as ICalculatorContext);
-        }
-        break;
+          break;
+      }
     }
+
+    if (props.id === Operations.OnOff)
+      setGlobalState({ onOff: true } as ICalculatorContext);
   };
 
   return (

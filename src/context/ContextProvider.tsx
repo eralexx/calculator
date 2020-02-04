@@ -1,7 +1,8 @@
-import React, { Component, useState } from "react";
+import React, { Component } from "react";
 import Context from "./Context";
 import ICalculatorContext from "./ICalculatorContext";
-import { sqrt, evaluate } from "mathjs";
+import { evaluate } from "mathjs";
+import { Operations } from "../enums/Operations";
 
 class ContextProvider extends Component<any, ICalculatorContext> {
   constructor(props: any) {
@@ -10,24 +11,17 @@ class ContextProvider extends Component<any, ICalculatorContext> {
     this.state = {
       onOff: false,
       lastResult: 0,
-      operationString: "",
-      screenString: "",
+      displayString: "",
       setState: this.setNewState,
       calculate: this.calculateExpression
-    } as ICalculatorContext;
+    };
   }
 
-  private setNewState = (newState: ICalculatorContext) => {
+  private setNewState = (newState: ICalculatorContext): void => {
     this.setState(newState);
   };
 
-  private calculateExpression = () => {
-    const res = evaluate(this.state.operationString);
-    this.setState({
-      operationString: res,
-      lastResult: res
-    });
-  };
+  private calculateExpression = (operation: Operations): void => {};
 
   render() {
     return (

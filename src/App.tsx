@@ -20,18 +20,21 @@ const App = () => {
               backgroundColor={"black"}
               foregroundColor={"white"}
               literal={"MRC"}
+              rounded
             />
             <Button
               id={2}
               backgroundColor={"black"}
               foregroundColor={"white"}
               literal={"M-"}
+              rounded
             />
             <Button
               id={3}
               backgroundColor={"black"}
               foregroundColor={"white"}
               literal={"M+"}
+              rounded
             />
             <Button
               id={5}
