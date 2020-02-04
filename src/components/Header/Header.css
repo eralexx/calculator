@@ -1,0 +1,23 @@
+.big {
+  font-size: 24px;
+}
+
+.medium {
+  font-size: 14px;
+}
+
+.small {
+  font-size: 12px;
+}
+
+.upper-header {
+  text-align: left;
+}
+
+.lower-header {
+  display: flex;
+  justify-content: space-between;
+}
+.header {
+  margin: 12px 20px 0px 20px;
+}
