@@ -1,13 +1,34 @@
-.resultScreen {
+.result-screen-container {
+  position: relative;
   padding: 2px;
   height: 40px;
   margin: 2px 10px 0px 10px;
   border: 2px solid black;
   background-color: #bdac95;
+  text-align: right;
 }
 
-.resultScreen > span {
+.result-screen {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.background-light {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.background-light > span {
+  color: lightgrey;
+}
+.result-screen > span,
+.background-light > span {
   font-family: Segment7Standard;
   vertical-align: -webkit-baseline-middle;
-  font-size: 38px;
+  font-size: 44px;
 }
